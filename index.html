@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--title for webpage explaining-->
+    <title>Sergio's Code Quiz</title>
+    <!--link for css stylesheet-->
+    <link href="assests/style.css" rel="stylesheet">
+    <!--link for javascript-->
+    <script src="assests/script.js"></script>
+</head>
+<body>
+    <!--making a intro title and decription-->
+    <!--GIVEN I am taking a code quiz, WHEN I click the start button, THEN a timer starts and I am presented with a question
+WHEN I answer a question, THEN I am presented with another question, WHEN I answer a question incorrectly
+THEN time is subtracted from the clock, WHEN all questions are answered or the timer reaches 0, THEN the game is over
+WHEN the game is over,THEN I can save my initials and my score-->
+<div class="center"> 
+    <h1>Sergio's Code Quiz</h1>
+    <p>Attempting to strengthen your Coding knowledge? Take my quiz! Click the Start Button to begin the timer
+        as well as the question. Once you answer the question, the next one will appear. If you answer the
+        question incorrectly, you will lose time. The quiz is over when you answer all questions or the timer
+        hits 0. Save your scores and initials at the end and try again!
+    </p>
+    <!--make a start quiz button-->
+    <div class="start-btn"><button>Start Quiz</button></div>
+</div>
+<!--make a container for the questions and answers-->
+<div class="container">
+    <div id="question-container" class="hide">
+        <div id="question">Question</div>
+        <div id="answer-buttons" class="btn-grid"></div>
+            <button class="btn">Answer 1</button>
+            <button class="btn">Answer 2</button>
+            <button class="btn">Answer 3</button>
+           <button class="btn">Answer 4</button>
+    </div>
+           
+    
+</div>
+   
+</body>
+</html>
