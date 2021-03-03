@@ -23,7 +23,7 @@
     </div>
     <!--make a container for the questions and answers-->
     <div class="container" class="hide">
-        <div id="question-container">
+        <div id="question-container"></div>
         <div id="question">Question</div>
         <div id="answer-buttons">
             <!--<button class="btn">Answer 1</button>
@@ -33,10 +33,13 @@
         </div>
     </div>
     <!--make timer for quiz-->
-    <h3 id="time"><h3>
+    <h3 id="time"></h3>
     <div class="end-prompt hide">
         <h2>Finished!</h2>
+        <h3>Enter your Initials to save your score!</h3>
         <form>
+            <label for="initials">Initials</label>
+            <input type="text"/>
             <button>Save</button>
         </form>
     </div>

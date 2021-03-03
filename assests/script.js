@@ -66,6 +66,8 @@ function setNextquestion(){
  var currentQuestion = questions[currentQuestionIndex];
  //fill question elemeent with current question
  questionElement.innerText= currentQuestion.question;
+ var answerbuttons = document.querySelector("#answer-buttons")
+ answerbuttons.innerHTML= ''
  // for when index equals 0 or the length of the options of the current question, add 1 to index
  for(i=0;i<currentQuestion.options.length;i++){
      //create variable for the choices equaling the current question options index
@@ -77,7 +79,7 @@ function setNextquestion(){
      // want inner text of choice button to be the choice variables
      choiceBtn.innerText= choice;
      //make a variable for the answer buttons using answer-buttons id
-     var answerbuttons = document.querySelector("#answer-buttons")
+     
      // pull together answer buttons and choice buttons
      answerbuttons.appendChild(choiceBtn);
     //when a chioce button is clicked , fire function answerClick
@@ -105,6 +107,7 @@ function answerClick(evt) {
         //when the timer reaches 0, THEN the game is over
         if (timeleft < 0) {
             endQuiz();
+        
         }
     }
 
@@ -114,7 +117,7 @@ function answerClick(evt) {
     // WHEN all questions are answered; current question index equals length of questions array meaning the last question
     if(currentQuestionIndex === questions.length){
         //run function endquiz
-     endQuiz()
+     endQuiz();
      //if not the last question, got to next question, fire setNectquestion function
      //// otherwise, get the next question
     }else {
@@ -131,11 +134,12 @@ function endQuiz(evt) {
     container.classList.add("hide");
     endprompt.classList.remove("hide");
     endprompt.classList.add("startprompt");
+    clearInterval(timerInterval);
    
 }
 
 //localStorage.setItem("score",JSON.stringify(score));
-   highScore();
+  // highScore();
     
 //function highScore(){
     //var time = JSON.parse(localStorage.getItem("timeleft"));

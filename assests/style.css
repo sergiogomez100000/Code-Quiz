@@ -23,6 +23,10 @@ body {
     
 }
 /*style the quesition buttons*/
+/*center timer*/
+#time {
+    text-align: center;
+}
 .btn {
     background-color: gray;
     font-size: 30px;
@@ -42,3 +46,8 @@ body {
     display: none;
 
 }
+/*center endprompt*/
+.end-prompt {
+    text-align: center;
+}
+
