@@ -6,9 +6,12 @@ you can view my application here(https://sergiogomez100000.github.io/Code-Quiz/i
 
 # Usage 
 This application can be used to test anyones knowledge of coding, see how they score and what they need to work on.
+Users can also save their score to see how they rank up on the scoreboard.
 
 # Images
-!(assests\images\Screenshot (11).png)
+<img src= "assests\images\Screenshot (14).png">
+<img src= "assests\images\Screenshot (15).png">
+<img src= "assests\images\Screenshot (16).png">
 
 
 # Roadmap
