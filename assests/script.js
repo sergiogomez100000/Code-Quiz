@@ -1,7 +1,3 @@
-
-
-
-//WHEN the game is over,THEN I can save my initials and my score
 // create variables for target classes n ids
 // create variable for questions
 var startbtn = document.querySelector("#start-btn");
@@ -11,23 +7,27 @@ var startprompt = document.querySelector(".start-prompt");
 var endprompt = document.querySelector(".end-prompt");
 var container = document.querySelector(".container");
 var questions = [
-    {question: "what is a div?",
+    {question: "What is a div?",
     correctAnswer:"an html tag element",
     options: ["a css tag element","a javascript element","an html tag element"]
     },
     {
-        question: "is the sky blue?",
-        correctAnswer: "True",
-        options: ["True","False"]
+        question: "What are people that write computer code called?",
+        correctAnswer: "Programmers",
+        options: ["Programmers","Coders","Developers","Cryptographers"]
     },
     {
-        question: "is the sea red?",
-        correctAnswer: "False",
-        options: ["True","False"]
+        question: "Which of these is NOT a coding program?",
+        correctAnswer: "Banana",
+        options: ["Banana","Javascript","Python","Ruby"]
     },
     {question:"how do you style the class header?",
     correctAnswer:".header",
     options:["#header", ".header"]
+    },
+    {question:"Which of these does NOT run using a computer program?",
+    correctAnswer:"Skateboard",
+    options:["Train", "Car","Skateboard","Airplane"]
     }
 ]
 const questionElement = document.getElementById("question")
@@ -103,7 +103,7 @@ function answerClick(evt) {
         //THEN time is subtracted from the clock,
         //then subtract 5 to score/time
         console.log("WRONG!")
-        timeleft -= 5
+        timeleft -= 10
         //when the timer reaches 0, THEN the game is over
         if (timeleft < 0) {
             endQuiz();
@@ -141,9 +141,20 @@ var save = $(".save-btn");
 //event listenter to save button
 save.on("click", saveScore);
 
-//make function for submit
-
+//WHEN the game is over,THEN I can save my initials and my score
+//make function to save score
 function saveScore(e){
-    e.preventdefault();
-    console.log("score saved");
+     //prevent refresh
+     e.preventdefault();
+     //creat variable for initials input. get value of varable
+     var val = $(".initials").val();
+     var scoreboard =$(".scoreboard");
+     //creates item variable, equalling to a new li element
+    var initial = $("<li>");
+    //item variable text is equal to val variable
+    initial.text(val);
+    //add item inside of shoppinlist el
+    scoreboard.append(item);
+    scoreboard.append($("<li>").text(val)
+    )
 }
