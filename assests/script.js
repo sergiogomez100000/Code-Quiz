@@ -134,14 +134,16 @@ function endQuiz(evt) {
     container.classList.add("hide");
     endprompt.classList.remove("hide");
     endprompt.classList.add("startprompt");
-    clearInterval(timerInterval);
+   //setTimeout(timeleft);
    
 }
+var save = $(".save-btn");
+//event listenter to save button
+save.on("click", saveScore);
 
-//localStorage.setItem("score",JSON.stringify(score));
-  // highScore();
-    
-//function highScore(){
-    //var time = JSON.parse(localStorage.getItem("timeleft"));
-    //document.querySelector("#endscore").textContent ="Your highscore is " + timeleft
-//}
+//make function for submit
+
+function saveScore(e){
+    e.preventdefault();
+    console.log("score saved");
+}
