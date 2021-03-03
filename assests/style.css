@@ -6,7 +6,7 @@ body {
  
 }
 /* center the main content*/
-.center {
+.start-prompt {
     display: block;
     margin: auto;
     width: 50%;
@@ -15,21 +15,30 @@ body {
     font-size: 25px;
 }
 /*style the start btn*/
-.start-btn button {
+#start-btn button {
     background-color: gray;
     font-size: 30px;
+    border-radius: 10px;
     cursor: pointer;
     
 }
-
-/*.center {
-    display:none
+/*style the quesition buttons*/
+.btn {
+    background-color: gray;
+    font-size: 30px;
+    border-radius: 10px;
+    cursor: pointer;
 }
+#question{
+    font-size: 30px;
+}
+/*hide questions until start button clicked*/
 .container{
-    display: block;
-    margin: auto;
-    width: 50%;
-    text-align: center;
-    margin-top: 100px;
-    font-size: 25px;
+    display: none;
+}
+
+/*make hide style for when you start button clicked*/
+.hide {
+    display: none;
+
 }
