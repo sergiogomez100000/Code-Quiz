@@ -2,7 +2,7 @@
 // create variable for questions
 var startbtn = document.querySelector("#start-btn");
 var time = document.querySelector("#time");
-var timeleft = 100;
+var timeleft = 50;
 var startprompt = document.querySelector(".start-prompt");
 var endprompt = document.querySelector(".end-prompt");
 var container = document.querySelector(".container");
@@ -53,12 +53,13 @@ function startgame(){
             }
         
          , 1000) ;
+         //and I am presented with a question
          //use a function to pull up next question
          setNextquestion()
 } 
 // create button for options
 document.createElement("button");
-//and I am presented with a question
+
 
 ////WHEN I answer a question, THEN I am presented with another question,
 // make function to pul up next question
@@ -106,7 +107,8 @@ function answerClick(evt) {
         console.log("WRONG!")
         timeleft -= 10
         //when the timer reaches 0, THEN the game is over
-        if (timeleft < 0) {
+        if (timeleft< 0) {
+            console.log("time end!");
             endQuiz();
         
         }
