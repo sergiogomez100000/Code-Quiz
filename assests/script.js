@@ -6,6 +6,7 @@ var timeleft = 100;
 var startprompt = document.querySelector(".start-prompt");
 var endprompt = document.querySelector(".end-prompt");
 var container = document.querySelector(".container");
+var timerInterval;
 var questions = [
     {question: "What is a div?",
     correctAnswer:"an html tag element",
@@ -46,7 +47,7 @@ function startgame(){
       
       //make  a timer that counts down every second.  
     
-        var timerInterval = setInterval(function() {
+        timerInterval = setInterval(function() {
             timeleft--;
             time.textContent = timeleft + " second(s) left";
             }
@@ -134,7 +135,7 @@ function endQuiz(evt) {
     container.classList.add("hide");
     endprompt.classList.remove("hide");
     endprompt.classList.add("startprompt");
-   //setTimeout(timeleft);
+   clearInterval(timerInterval);
    
 }
 var save = $(".save-btn");
@@ -145,16 +146,64 @@ save.on("click", saveScore);
 //make function to save score
 function saveScore(e){
      //prevent refresh
-     e.preventdefault();
+     e.preventDefault();
+     console.log(e.target)
      //creat variable for initials input. get value of varable
-     var val = $(".initials").val();
-     var scoreboard =$(".scoreboard");
+     var val = document.getElementsByClassName("initials").value;
+     var scoreboard =document.getElementsByClassName("scoreboard");
+     // check if there are high scores in local storage
+     var highScores = JSON.parse(window.localStorage.getItem("highScores")) || [];
+    console.log(scoreboard);
+     if (val !== "") {
+        // initial.text(val);
+        // scoreboard.append(initial);
+
+
+        // create a new high score
+        var newScore = {
+            score: timeleft,
+            initials: val
+        }
+        // push this the new high score into the high scores that we retrieve from local storage
+        highScores.push(newScore);
+
+        // then we set the local storage as the whole new array with te new high score
+        window.localStorage.setItem("highScores", JSON.stringify(highScores));
+     }
+     console.log("high scores: ", highScores);
+     
+
+     // sort the high scores
+     highScores.sort(function(a,b) {
+         return b.score - a.score;
+     });
+     // for each high score, set the list item text to INITIALS: SCORE, append the list item to the ul
+    //  for(var i=0; i<highScores.length;i++) {
+    //     var initial = $("<li>");
+    //      console.log(highScores[i].initials + ": " + highScores[i].score)
+    //      var inits = highScores[i].initials;
+    //      var score = highScores[i].score;
+    //      initial.innerText = inits + ": " + score;
+    //      scoreboard[0].append(initial);
+    //  }
+    highScores.forEach(function(score) {
+        var initial = document.createElement("li");
+         var inits = score.initials;
+         var score = score.score;
+         initial.innerText = inits + ": " + score;
+         scoreboard[0].append(initial);
+    })
+
+     console.log("sorted scores: ", highScores);
+     // display them as a list
+
      //creates item variable, equalling to a new li element
-    var initial = $("<li>");
+     
     //item variable text is equal to val variable
-    initial.text(val);
     //add item inside of shoppinlist el
-    scoreboard.append(item);
-    scoreboard.append($("<li>").text(val)
-    )
+    // initial.appendChild(val);
+    // scoreboard.append(initial);
+    // scoreboard.append($("<li>").text(val)
+
+    
 }
