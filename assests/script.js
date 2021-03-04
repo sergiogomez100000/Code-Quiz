@@ -28,7 +28,7 @@ var questions = [
     },
     {question:"Which of these does NOT run using a computer program?",
     correctAnswer:"Skateboard",
-    options:["Train", "Car","Skateboard","Airplane"]
+    options:["Computer", "Boat","Skateboard","Airplane"]
     }
 ]
 const questionElement = document.getElementById("question")
