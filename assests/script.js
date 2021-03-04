@@ -20,7 +20,7 @@ var questions = [
     {
         question: "Which of these is NOT a coding program?",
         correctAnswer: "Banana",
-        options: ["Banana","Javascript","Python","Ruby"]
+        options: ["Banana","Javascript","Python","Moment.js"]
     },
     {question:"how do you style the class header?",
     correctAnswer:".header",
@@ -28,7 +28,7 @@ var questions = [
     },
     {question:"Which of these does NOT run using a computer program?",
     correctAnswer:"Skateboard",
-    options:["Computer", "Boat","Skateboard","Airplane"]
+    options:["Computer", "Cash Register","Skateboard","Airplane"]
     }
 ]
 const questionElement = document.getElementById("question")
@@ -50,6 +50,11 @@ function startgame(){
         timerInterval = setInterval(function() {
             timeleft--;
             time.textContent = timeleft + " second(s) left";
+            if (timeleft=== 0) {
+                console.log("time end!");
+                endQuiz();
+            
+            }
             }
         
          , 1000) ;
@@ -107,11 +112,7 @@ function answerClick(evt) {
         console.log("WRONG!")
         timeleft -= 10
         //when the timer reaches 0, THEN the game is over
-        if (timeleft< 0) {
-            console.log("time end!");
-            endQuiz();
         
-        }
     }
 
     // this adds 1 to the index to move through the questions
@@ -157,8 +158,7 @@ function saveScore(e){
      var highScores = JSON.parse(window.localStorage.getItem("highScores")) || [];
     console.log(scoreboard);
      if (val !== "") {
-        // initial.text(val);
-        // scoreboard.append(initial);
+        
 
 
         // create a new high score
@@ -180,32 +180,18 @@ function saveScore(e){
          return b.score - a.score;
      });
      // for each high score, set the list item text to INITIALS: SCORE, append the list item to the ul
-    //  for(var i=0; i<highScores.length;i++) {
-    //     var initial = $("<li>");
-    //      console.log(highScores[i].initials + ": " + highScores[i].score)
-    //      var inits = highScores[i].initials;
-    //      var score = highScores[i].score;
-    //      initial.innerText = inits + ": " + score;
-    //      scoreboard[0].append(initial);
-    //  }
     highScores.forEach(function(score) {
         var initial = document.createElement("li");
-         var inits = score.initials;
+        var inits = score.initials;
          var score = score.score;
          initial.innerText = inits + ": " + score;
          scoreboard[0].append(initial);
     })
 
      console.log("sorted scores: ", highScores);
-     // display them as a list
-
-     //creates item variable, equalling to a new li element
+    
      
-    //item variable text is equal to val variable
-    //add item inside of shoppinlist el
-    // initial.appendChild(val);
-    // scoreboard.append(initial);
-    // scoreboard.append($("<li>").text(val)
+
 
     
 }
