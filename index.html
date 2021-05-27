@@ -5,18 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--title for webpage explaining-->
-    <title>Sergio's Code Quiz</title>
+    <title>Coding Quiz</title>
     <!--link for css stylesheet-->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"> -->
     <link href="assests/style.css" rel="stylesheet">
 </head>
 <body>
     <!--making a intro title and decription-->
     <div class="start-prompt"> 
-        <h1>Sergio's Code Quiz</h1>
-     <p>Attempting to strengthen your Coding knowledge? Take my quiz! Click the Start Button to begin the timer
-        as well as the question. Once you answer the question, the next one will appear. If you answer the
-        question incorrectly, you will lose time. The quiz is over when you answer all questions or the timer
-        hits 0. Save your scores and initials at the end and try again!
+        <h1>Coding Quiz</h1>
+     <p>Attempting to strengthen your Coding knowledge? Take my quiz! Start the quiz to begin the timer
+        as well as the questions. If you answer the
+        question incorrectly, you will lose time. The quiz is over when you answer all questions or the time
+        runs out. Save your scores and initials at the end and try again!
      </p>
         <!--make a start quiz button-->
         <div id="start-btn"><button>Start Quiz</button></div>
@@ -24,13 +25,8 @@
     <!--make a container for the questions and answers-->
     <div class="container" class="hide">
         <div id="question-container"></div>
-        <div id="question">Question</div>
-        <div id="answer-buttons">
-            <!--<button class="btn">Answer 1</button>
-            <button class="btn">Answer 2</button>
-            <button class="btn">Answer 3</button>
-           <button class="btn">Answer 4</button>-->
-        </div>
+        <div id="question"></div>
+        <div id="answer-buttons"></div>
     </div>
     <!--make timer for quiz-->
     <h3 id="time"></h3>
@@ -39,9 +35,9 @@
         <h3>Enter your Initials to save your score, and Reset to try again!</h3>
         <form>
             <label for="initials">Initials</label>
-            <input type="text" class="initials"/>
+            <input type="text" id="initials"/>
             <button class="save-btn">Save</button>
-            <button class="reset-btn">Reset</button>
+            <button class="reset-btn">Try Again</button>
         </form>
         <ul class="scoreboard"></ul>
     </div>

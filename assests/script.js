@@ -50,7 +50,8 @@ function startgame(){
         timerInterval = setInterval(function() {
             timeleft--;
             time.textContent = timeleft + " second(s) left";
-            if (timeleft=== 0) {
+            if (timeleft === 0) {
+                clearInterval(timerInterval)
                 console.log("time end!");
                 endQuiz();
             
@@ -152,7 +153,8 @@ function saveScore(e){
      e.preventDefault();
      console.log(e.target)
      //creat variable for initials input. get value of varable
-     var val = document.getElementsByClassName("initials").value;
+     var val = document.querySelector("#initials").value;
+     console.log("VAL:" + val)
      var scoreboard =document.getElementsByClassName("scoreboard");
      // check if there are high scores in local storage
      var highScores = JSON.parse(window.localStorage.getItem("highScores")) || [];
