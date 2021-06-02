@@ -84,6 +84,7 @@ function setNextquestion(){
      var choiceBtn = document.createElement("button");
         // choice button is equal to choice
      choiceBtn.setAttribute("value", choice);
+     choiceBtn.classList.add("btn")
      // want inner text of choice button to be the choice variables
      choiceBtn.innerText= choice;
      //make a variable for the answer buttons using answer-buttons id

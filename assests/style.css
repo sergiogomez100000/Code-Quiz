@@ -17,7 +17,7 @@ body {
 }
 /*style the start btn*/
 #start-btn button {
-    background-color: gray;
+    background-color:#4f66eb;
     font-size: 30px;
     border-radius: 10px;
     cursor: pointer;
@@ -29,7 +29,7 @@ body {
     text-align: center;
 }
 .btn {
-    background-color: gray;
+    background-color: #4f66eb;
     font-size: 30px;
     border-radius: 10px;
     cursor: pointer;
@@ -52,3 +52,6 @@ body {
     text-align: center;
 }
 
+.scoreboard {
+    list-style-type: none;
+}
